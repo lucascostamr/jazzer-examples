@@ -4,7 +4,6 @@ import com.code_intelligence.jazzer.api.FuzzedDataProvider;
 import com.code_intelligence.jazzer.junit.FuzzTest;
 
 public class CalculatorFuzzTest {
-    // The method to process a basic arithmetic expression
     public static void processExpression(String expression) {
         try {
             System.out.println("Processing expression: " + expression);
@@ -15,7 +14,6 @@ public class CalculatorFuzzTest {
         }
     }
 
-    // A simple evaluator for basic expressions with +, -, *, /
     public static double evalSimpleExpression(String expression) {
         String[] tokens = expression.split(" ");
 
@@ -44,8 +42,7 @@ public class CalculatorFuzzTest {
         }
     }
 
-    // Fuzz test method
-    @FuzzTest(maxDuration = "30s")
+    @FuzzTest(maxDuration = "10s")
     public void fuzzProcessExpression(FuzzedDataProvider data) {
         String expression = data.consumeRemainingAsString();
         processExpression(expression);

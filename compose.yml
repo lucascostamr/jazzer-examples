@@ -7,5 +7,4 @@ services:
       - 3000:3000
     environment:
       - JAZZER_FUZZ=1
-    command: sh
-    tty: true
+    command: mvn test -f /app
